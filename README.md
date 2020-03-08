@@ -3,7 +3,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5e027990faf34e35b3eb5621c211faee)](https://app.codacy.com/manual/WhatTheBlock/SINoALICE_JJC_Assistant?utm_source=github.com&utm_medium=referral&utm_content=WhatTheBlock/SINoALICE_JJC_Assistant&utm_campaign=Badge_Grade_Dashboard)
 
-### 巴哈姆特詳細介紹文章：待補 <br><br>
+### 巴哈姆特詳細介紹文章：[點我](https://forum.gamer.com.tw/C.php?bsn=31743&snA=4390) <br><br>
 
 ### ✡  本專案使用Qt 5.14.0開發  ✡ <br><br>
 
