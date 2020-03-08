@@ -3,7 +3,7 @@
 //   寫這個工具是因為算時間反應不過來只好用程式輔助XD
 //   如果有哪邊希望改進的部分歡迎到巴哈小屋找我，或是在Github提issue也可以唷
 //   歡迎加巴哈好友，巴哈小屋：https://home.gamer.com.tw/evildjkay
-//   巴哈文章：(待補)
+//   巴哈文章：https://forum.gamer.com.tw/C.php?bsn=31743&snA=4390
 //   夢魘圖片來源：https://sinoalice.game-db.tw/
 */
 
