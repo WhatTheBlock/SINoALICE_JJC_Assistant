@@ -80,6 +80,8 @@ void Widget::oneSec() {
 void Widget::calculate(int time) {
     int delay = ui->reserveTime->value() + ui->determineTime->value();
     ui->switchTime->setTime(ui->remainingTime->time().addSecs(-(time - delay)));
+    
+    //複製換位時間訊息到剪貼簿
     clipboardText = QString("換位時間：%1").arg(ui->switchTime->time().toString("mm:ss"));
     clipboard->setText(clipboardText);
 }
