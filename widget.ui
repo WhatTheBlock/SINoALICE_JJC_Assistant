@@ -34,6 +34,10 @@
   <property name="windowTitle">
    <string>死亡愛麗絲 競技場助手</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/images/icon.png</normaloff>:/images/icon.png</iconset>
+  </property>
   <widget class="QTextEdit" name="background">
    <property name="enabled">
     <bool>true</bool>
@@ -694,6 +698,8 @@
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>
