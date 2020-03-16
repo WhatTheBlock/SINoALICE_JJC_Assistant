@@ -10,6 +10,7 @@
 #include "widget.h"
 #include "ui_widget.h"
 
+#define magicValue 1198 //競技場總時長只有1198秒
 constexpr const char* const Widget::jjcTime[];
 
 //初始化
@@ -23,6 +24,8 @@ Widget::Widget(QWidget *parent): QWidget(parent), ui(new Ui::Widget) {
 
     //初始化時間
     ui->currentTime->setTime(QTime::currentTime());
+    //ui->currentTime->setTime(QTime::fromString("20:59:50"));
+    //ui->currentTime->setTime(QTime::fromString("21:19:50"));
 
     //計時器(1秒執行1次)
     oneSecTimer = new QTimer(this);
@@ -36,12 +39,13 @@ Widget::~Widget() { delete ui; }
 void Widget::oneSec() {
     //更新當前時間
     ui->currentTime->setTime(QTime::currentTime());
+    //ui->currentTime->setTime(ui->currentTime->time().addSecs(1));
 
     //若競技場已開戰
     if(jjcStarted) {
         //若競技場已結束或尚未開始 (開戰途中修改時段設定)
         if(ui->currentTime->time().operator<(QTime::fromString(jjcTime[jjcTimeIndex])) ||
-                ui->currentTime->time().operator>(QTime::fromString(jjcTime[jjcTimeIndex]).addSecs(1199))) {
+                ui->currentTime->time().operator>(QTime::fromString(jjcTime[jjcTimeIndex]).addSecs(magicValue))) {
             jjcStarted = false;
             ui->debuff_both_lv3->setEnabled(false);
             ui->debuff_both_lv4->setEnabled(false);
@@ -49,23 +53,22 @@ void Widget::oneSec() {
             ui->debuff_single_lv4->setEnabled(false);
             ui->remainingTime->setEnabled(false);
             ui->switchTime->setEnabled(false);
-            ui->remainingTime->setTime(QTime::fromString("19:58", "mm:ss"));
-            ui->switchTime->setTime(QTime::fromString("19:58", "mm:ss"));
+            ui->remainingTime->setTime(QTime::fromString("20:00", "mm:ss"));
+            ui->switchTime->setTime(QTime::fromString("20:00", "mm:ss"));
         }
         //計算競技場剩餘時間
         else {
             ui->remainingTime->setTime(
                         QTime(0, 0).addSecs(
                             ui->currentTime->time().secsTo(
-                                QTime::fromString(jjcTime[jjcTimeIndex]).addSecs(1198))
+                                QTime::fromString(jjcTime[jjcTimeIndex]).addSecs(magicValue))
                             )
                         );
         }
-
     }
     //判斷競技場開戰狀態
     else if(ui->currentTime->time().operator>=(QTime::fromString(jjcTime[jjcTimeIndex])) &&
-            ui->currentTime->time().operator<(QTime::fromString(jjcTime[jjcTimeIndex]).addSecs(1199))) {
+            ui->currentTime->time().operator<(QTime::fromString(jjcTime[jjcTimeIndex]).addSecs(magicValue))) {
         jjcStarted = true;
         ui->debuff_both_lv3->setEnabled(true);
         ui->debuff_both_lv4->setEnabled(true);
