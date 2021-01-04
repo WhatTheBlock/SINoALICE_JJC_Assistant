@@ -35,7 +35,7 @@
    <string>死亡愛麗絲 競技場助手</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="images.qrc">
+   <iconset>
     <normaloff>:/images/icon.png</normaloff>:/images/icon.png</iconset>
   </property>
   <widget class="QTextEdit" name="background">
@@ -289,6 +289,7 @@
      </property>
      <property name="font">
       <font>
+       <family>微軟正黑體</family>
        <pointsize>24</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -579,7 +580,7 @@
        </font>
       </property>
       <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;準備時間：70秒&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;:/images/debuff_single_lv3_1.png&quot;/&gt;&lt;img src=&quot;:/images/debuff_single_lv3_2.png&quot;/&gt;&lt;img src=&quot;:/images/debuff_single_lv3_3.png&quot;/&gt;&lt;img src=&quot;:/images/debuff_single_lv3_4.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;準備時間：70秒&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;:/images/debuff_single_lv3_1.png&quot;/&gt;&lt;img src=&quot;:/images/debuff_single_lv3_2.png&quot;/&gt;&lt;img src=&quot;:/images/debuff_single_lv3_3.png&quot;/&gt;&lt;img src=&quot;:/images/debuff_single_lv3_4.png&quot;/&gt;&lt;img src=&quot;:/images/debuff_single_lv3_5.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="whatsThis">
        <string/>
@@ -698,8 +699,6 @@
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="images.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
