@@ -1,4 +1,4 @@
-/*
+﻿/*
 //   哈囉大家好：）我是台版玩家【小二】
 //   寫這個工具是因為算時間反應不過來只好用程式輔助XD
 //   如果有哪邊希望改進的部分歡迎到巴哈小屋找我，或是在Github提issue也可以唷
@@ -44,8 +44,8 @@ void Widget::oneSec() {
     //若競技場已開戰
     if(jjcStarted) {
         //若競技場已結束或尚未開始 (開戰途中修改時段設定)
-        if(ui->currentTime->time().operator<(QTime::fromString(jjcTime[jjcTimeIndex])) ||
-                ui->currentTime->time().operator>(QTime::fromString(jjcTime[jjcTimeIndex]).addSecs(magicValue))) {
+        if(operator<(ui->currentTime->time(), QTime::fromString(jjcTime[jjcTimeIndex])) ||
+                operator>(ui->currentTime->time(), QTime::fromString(jjcTime[jjcTimeIndex]).addSecs(magicValue))) {
             jjcStarted = false;
             ui->debuff_both_lv3->setEnabled(false);
             ui->debuff_both_lv4->setEnabled(false);
@@ -67,8 +67,8 @@ void Widget::oneSec() {
         }
     }
     //判斷競技場開戰狀態
-    else if(ui->currentTime->time().operator>=(QTime::fromString(jjcTime[jjcTimeIndex])) &&
-            ui->currentTime->time().operator<(QTime::fromString(jjcTime[jjcTimeIndex]).addSecs(magicValue))) {
+    else if(operator>=(ui->currentTime->time(), QTime::fromString(jjcTime[jjcTimeIndex])) &&
+            operator<(ui->currentTime->time(), QTime::fromString(jjcTime[jjcTimeIndex]).addSecs(magicValue))) {
         jjcStarted = true;
         ui->debuff_both_lv3->setEnabled(true);
         ui->debuff_both_lv4->setEnabled(true);
